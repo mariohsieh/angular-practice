@@ -1,0 +1,10 @@
+.box
+{
+	width: 325px;
+	margin: 0px auto;
+}
+
+.done-true {
+	text-decoration: line-through;
+	color: grey;
+}
