@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<title>5 Examples: Inline Editor</title>
+
+	<!-- load angular.js -->
+	<script src="js/angular.js"></script>
+	<script src="js/inline-editor.js"></script>
+
+	<!-- css links -->
+	<link rel="stylesheet" type="text/css" href="css/reset.css" />
+	<link rel="stylesheet" type="text/css" href="css/inline-editor.css" />
+</head>
+<body>
+	<div id="main" ng-app ng-controller="InlineEditorController" ng-click="hideTooltip()">
+		<!-- tooltip shown when the variable showtooltip is 'true' -->
+		<div class="tooltip" ng-click="$event.stopPropagation()" ng-show="showtooltip">
+
+			<!-- ng-model binds input text field with the 'value' model
+				any changes to the text field will instantly update the value,
+				and all other bindings on the page that depend on it.  -->
+			<input type="text" ng-model="value" />
+		</div>
+
+		<!-- call a method in the InlineEditorController that toggles showtooltip -->
+		<p ng-click="toggleTooltip($event)">{{value}}</p>
+	</div>
+</body>
+</html>
